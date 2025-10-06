@@ -55,11 +55,12 @@ h1 {
   font-weight: 600;
 }
 
-/* --- HAMBURGER BUTTON --- */
+/* --- HAMBURGER BUTTON (НОВАЯ ПОЗИЦИЯ: СЛЕВА) --- */
 .hamburger {
     position: absolute;
     top: 5px; 
-    right: 0;
+    /* Переносим с right на left */
+    left: 0; 
     width: 30px;
     height: 30px;
     background: none;
@@ -70,6 +71,7 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     z-index: 20; 
+    transition: top 0.3s; /* Для плавности на мобильных */
 }
 .bar {
     width: 100%;
@@ -79,6 +81,14 @@ h1 {
     transition: 0.3s;
     box-shadow: 0 0 5px #c000ff;
 }
+
+/* Поднимаем Гамбургер на телефонах (меньше 600px) */
+@media (max-width: 600px) {
+    .hamburger {
+        top: -15px; /* Сдвигаем выше, чтобы не мешал заголовку */
+    }
+}
+
 
 /* --- SIDEBAR MENU --- */
 .sidebar {
