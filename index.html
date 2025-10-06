@@ -40,22 +40,27 @@
       <img src="scitzophrenia.jpg" alt="SCITZOPHRENIA" />
       <div class="info"><h2>#1 SCITZOPHRENIA</h2></div>
     </div>
+
     <div class="card top2" data-id="254" data-author="PERFARATARRRRRR" data-length="3:19 (XL)" data-title="SEEK & DESTROY">
       <img src="seek_and_destroy.jpg" alt="SEEK & DESTROY" />
       <div class="info"><h2>#2 SEEK & DESTROY</h2></div>
     </div>
+
     <div class="card top3" data-id="211" data-author="EvenTencid" data-length="1:00 (Long)" data-title="ACFACTORY">
       <img src="acfactory.jpg" alt="ACFACTORY" />
       <div class="info"><h2>#3 ACFACTORY</h2></div>
     </div>
+
     <div class="card" data-id="147" data-author="KosmosTT" data-length="0:36 (Medium)" data-title="MAYMORY">
       <img src="maymory.jpg" alt="MAYMORY" />
       <div class="info"><h2>#4 MAYMORY</h2></div>
     </div>
+
     <div class="card" data-id="279" data-author="kirill0gd" data-length="1:39 (Long)" data-title="BLOODBATH">
       <img src="bloodbath.jpg" alt="BLOODBATH" />
       <div class="info"><h2>#5 BLOODBATH</h2></div>
     </div>
+
     <div class="card" data-id="168" data-author="KosmosTT" data-length="0:33 (Medium)" data-title="LAVA BOUNCE">
       <img src="lava_bounce.jpg" alt="LAVA BOUNCE" />
       <div class="info"><h2>#6 LAVA BOUNCE</h2></div>
@@ -153,10 +158,10 @@
       }
     });
 
-    // --- Tabs & Sidebar (ОБНОВЛЕННАЯ ЛОГИКА) ---
+    // --- Tabs & Sidebar Logic ---
     const tabButtons = document.querySelectorAll(".tab-button");
     const sidebarButtons = document.querySelectorAll(".sidebar-button");
-    const allButtons = [...tabButtons, ...sidebarButtons]; // Все кнопки переключения
+    const allButtons = [...tabButtons, ...sidebarButtons]; 
     const tabs = document.querySelectorAll(".tab-content");
     const body = document.body; 
     const sidebar = document.getElementById("sidebar");
@@ -180,14 +185,14 @@
         tabs.forEach(t => t.classList.remove("active"));
         
         // 2. Активация выбранной вкладки
-        // Для кнопок в sidebar, активной становится только кнопка sidebar, а не вся навигация
-        // Добавляем класс active к самой кнопке, независимо от того, где она находится
         btn.classList.add("active"); 
         document.querySelector(`.${btn.dataset.tab}`).classList.add("active");
 
         // Если нажали на кнопку в sidebar, закрываем его
         if (btn.classList.contains("sidebar-button")) {
              sidebar.classList.remove("open");
+             // Делаем активной кнопку "Demon List" на основной панели для чистоты
+             document.querySelector('.tab-button[data-tab="demon-list"]').classList.remove("active");
         }
 
         // 3. Динамическая смена фона 
