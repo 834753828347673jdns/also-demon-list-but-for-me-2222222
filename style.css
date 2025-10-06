@@ -59,7 +59,6 @@ h1 {
 .hamburger {
     position: absolute;
     top: 5px; 
-    /* Переносим с right на left */
     left: 0; 
     width: 30px;
     height: 30px;
@@ -71,7 +70,7 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     z-index: 20; 
-    transition: top 0.3s; /* Для плавности на мобильных */
+    transition: top 0.3s;
 }
 .bar {
     width: 100%;
@@ -85,7 +84,7 @@ h1 {
 /* Поднимаем Гамбургер на телефонах (меньше 600px) */
 @media (max-width: 600px) {
     .hamburger {
-        top: -15px; /* Сдвигаем выше, чтобы не мешал заголовку */
+        top: -15px; 
     }
 }
 
@@ -207,8 +206,9 @@ nav {
   display: block; 
 }
 
-/* Только Demon List использует grid-разметку */
-.demon-list.active {
+/* Только Demon List и In Progress используют grid-разметку */
+.demon-list.active,
+.in-progress.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
