@@ -31,8 +31,8 @@
 
   <nav>
     <button class="tab-button active" data-tab="demon-list">Demon List</button>
-    <button class="tab-button" data-tab="in-progress">In Progress / Unverified</button>
     <button class="tab-button" data-tab="impossible">Impossible List</button>
+    <button class="tab-button" data-tab="in-progress">In Progress / Unverified</button>
   </nav>
 
   <main class="tab-content demon-list active">
@@ -83,6 +83,11 @@
       <img src="depression.jpg" alt="DEPRESSION" />
       <div class="info"><h2>DEPRESSION (In Progress)</h2></div>
     </div>
+
+    <div class="card" data-id="—" data-author="Depperens" data-length="Unknown" data-title="XPEH 3HAET">
+      <img src="xpeh3haet.jpg" alt="XPEH 3HAET" />
+      <div class="info"><h2>XPEH 3HAET (In Progress)</h2></div>
+    </div>
     
   </main>
 
@@ -98,8 +103,9 @@
       <ul>
         <li>**Дизайн:** Внедрен неоновый стиль PERFARATARRRRRR на базе шрифта Orbitron.</li>
         <li>**Новый функционал:** Добавлены динамические режимы фона для Impossible List (Красный) и In Progress (Серый).</li>
-        <li>**Структура:** Добавлено боковое меню (Sidebar) для раздела News.</li>
+        <li>**Структура:** Добавлено боковое меню (Sidebar) для раздела News, кнопка Гамбургера перенесена влево.</li>
         <li>**Рейтинг:** Обновлена визуальная иерархия для ТОП-2 и ТОП-3.</li>
+        <li>**Контент:** Добавлены новые уровни в "In Progress" (LITHIUM, ALSO ANATHEMA, DEPRESSION, XPEH 3HAET).</li>
       </ul>
     </div>
     <div class="update-entry soon">
@@ -158,7 +164,7 @@
       }
     });
 
-    // --- Tabs & Sidebar Logic ---
+    // --- Tabs & Sidebar Logic (добавляем динамику для гамбургера) ---
     const tabButtons = document.querySelectorAll(".tab-button");
     const sidebarButtons = document.querySelectorAll(".sidebar-button");
     const allButtons = [...tabButtons, ...sidebarButtons]; 
@@ -167,6 +173,27 @@
     const sidebar = document.getElementById("sidebar");
     const openSidebarBtn = document.getElementById("open-sidebar");
     const closeSidebarBtn = document.getElementById("close-sidebar");
+    const hamburgerBars = document.querySelectorAll(".hamburger .bar"); // Получаем полоски гамбургера
+
+    // Функция для обновления цвета гамбургера
+    function updateHamburgerColor(mode) {
+      let color = '#c000ff'; // Фиолетовый по умолчанию
+      let shadow = '0 0 5px #c000ff';
+
+      if (mode === 'impossible') {
+        color = '#ff0000'; // Красный
+        shadow = '0 0 5px #ff0000';
+      } else if (mode === 'progress') {
+        color = '#b0b0b0'; // Серый
+        shadow = '0 0 5px #b0b0b0';
+      }
+
+      hamburgerBars.forEach(bar => {
+        bar.style.backgroundColor = color;
+        bar.style.boxShadow = shadow;
+      });
+    }
+
 
     // Логика открытия/закрытия бокового меню
     openSidebarBtn.addEventListener("click", () => {
@@ -198,13 +225,34 @@
         // 3. Динамическая смена фона 
         body.classList.remove("impossible-mode", "progress-mode"); 
 
+        let currentMode = '';
         if (btn.dataset.tab === "impossible") {
           body.classList.add("impossible-mode");
+          currentMode = 'impossible';
         } else if (btn.dataset.tab === "in-progress") {
           body.classList.add("progress-mode");
+          currentMode = 'progress';
         }
+        // Обновляем цвет гамбургера
+        updateHamburgerColor(currentMode);
       });
     });
+
+    // Устанавливаем цвет гамбургера при загрузке страницы (для активной вкладки по умолчанию)
+    document.addEventListener('DOMContentLoaded', () => {
+      const activeTab = document.querySelector('.tab-button.active');
+      if (activeTab) {
+        let initialMode = '';
+        if (activeTab.dataset.tab === 'impossible') {
+          initialMode = 'impossible';
+        } else if (activeTab.dataset.tab === 'in-progress') {
+          initialMode = 'progress';
+        }
+        updateHamburgerColor(initialMode);
+      }
+    });
+
   </script>
 </body>
+</html>
 </html>
