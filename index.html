@@ -16,6 +16,9 @@
     <button class="tab-button active" data-tab="demon-list">Demon List</button>
     <button class="tab-button" data-tab="in-progress">In Progress / Unverified</button>
     <button class="tab-button" data-tab="impossible">Impossible List</button>
+    
+    <button class="tab-button" data-tab="news">News</button>
+    <button class="tab-button" data-tab="stats">Stats</button>
   </nav>
 
   <main class="tab-content demon-list active">
@@ -59,6 +62,27 @@
 
   <main class="tab-content impossible">
     <p class="soon">⚙️ Soon by <span class="highlight">KosmosTT</span>...</p>
+  </main>
+
+  <main class="tab-content news">
+    <h2>News & Updates</h2>
+    <div class="update-entry">
+      <h3>[06.10.2025] Запуск сайта и новые режимы!</h3>
+      <p>Официальный запуск ALSO GDPS Demon List!</p>
+      <ul>
+        <li>**Дизайн:** Внедрен неоновый стиль PERFARATARRRRRR на базе шрифта Orbitron.</li>
+        <li>**Новый функционал:** Добавлены динамические режимы фона для Impossible List (Красный) и In Progress (Серый).</li>
+        <li>**Структура:** Добавлены вкладки News и Stats.</li>
+        <li>**Рейтинг:** Обновлена визуальная иерархия для ТОП-2 и ТОП-3.</li>
+      </ul>
+    </div>
+    <div class="update-entry soon">
+        <p>Больше новостей скоро...</p>
+    </div>
+  </main>
+
+  <main class="tab-content stats">
+    <p class="soon">📊 Статистика в разработке...</p>
   </main>
 
   <footer>
@@ -136,6 +160,7 @@
         } else if (btn.dataset.tab === "in-progress") {
           body.classList.add("progress-mode");
         }
+        // Вкладки News и Stats используют дефолтный фон
       });
     });
   </script>
