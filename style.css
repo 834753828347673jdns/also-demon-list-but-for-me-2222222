@@ -138,14 +138,40 @@ nav {
   text-shadow: 0 0 10px #a000ff;
 }
 
-/* Top glows */
-.top1 { box-shadow: 0 0 25px #ff00ff, 0 0 60px #ff66ff, inset 0 0 30px #a000ff; animation: pulse1 3s infinite alternate; }
-.top2 { box-shadow: 0 0 25px #6600ff, 0 0 50px #9900ff, inset 0 0 20px #3300ff; animation: pulse2 3s infinite alternate; }
-.top3 { box-shadow: 0 0 20px #3300ff, 0 0 40px #66ccff, inset 0 0 15px #6600ff; animation: pulse3 3s infinite alternate; }
+/* --- ОБНОВЛЕННЫЕ СВЕЧЕНИЯ ТОР-3 --- */
 
-@keyframes pulse1 { from { box-shadow: 0 0 20px #ff33ff; } to { box-shadow: 0 0 80px #ff00ff; } }
-@keyframes pulse2 { from { box-shadow: 0 0 20px #6600ff; } to { box-shadow: 0 0 70px #7a33ff; } }
-@keyframes pulse3 { from { box-shadow: 0 0 15px #3300ff; } to { box-shadow: 0 0 60px #66ccff; } }
+/* Топ 1: Максимальное свечение (Розово-фиолетовый) */
+.top1 { 
+    box-shadow: 0 0 25px #ff00ff, 0 0 60px #ff66ff, inset 0 0 30px #a000ff; 
+    animation: pulse1 3s infinite alternate; 
+}
+
+/* Топ 2: Более сильное свечение (Ярко-фиолетовый) */
+.top2 { 
+    box-shadow: 0 0 30px #9900ff, 0 0 70px #cc00ff, inset 0 0 25px #6600ff; 
+    animation: pulse2 3s infinite alternate; 
+}
+
+/* Топ 3: Немного ослабленное свечение (Голубой/Светло-фиолетовый) */
+.top3 { 
+    box-shadow: 0 0 15px #3300ff, 0 0 40px #66ccff, inset 0 0 10px #6600ff; 
+    animation: pulse3 3s infinite alternate; 
+}
+
+/* Анимации */
+@keyframes pulse1 { 
+    from { box-shadow: 0 0 20px #ff33ff; } 
+    to { box-shadow: 0 0 80px #ff00ff; } 
+}
+@keyframes pulse2 { 
+    from { box-shadow: 0 0 25px #9900ff; } 
+    to { box-shadow: 0 0 90px #cc00ff; } 
+}
+@keyframes pulse3 { 
+    from { box-shadow: 0 0 10px #3300ff; } 
+    to { box-shadow: 0 0 50px #66ccff; } 
+}
+
 
 /* Modal (без изменений) */
 .modal {
