@@ -18,7 +18,6 @@
     <button class="tab-button" data-tab="impossible">Impossible List</button>
     
     <button class="tab-button" data-tab="news">News</button>
-    <button class="tab-button" data-tab="stats">Stats</button>
   </nav>
 
   <main class="tab-content demon-list active">
@@ -72,17 +71,13 @@
       <ul>
         <li>**Дизайн:** Внедрен неоновый стиль PERFARATARRRRRR на базе шрифта Orbitron.</li>
         <li>**Новый функционал:** Добавлены динамические режимы фона для Impossible List (Красный) и In Progress (Серый).</li>
-        <li>**Структура:** Добавлены вкладки News и Stats.</li>
+        <li>**Структура:** Добавлены вкладки News и Stats (удален в следующем обновлении).</li>
         <li>**Рейтинг:** Обновлена визуальная иерархия для ТОП-2 и ТОП-3.</li>
       </ul>
     </div>
     <div class="update-entry soon">
         <p>Больше новостей скоро...</p>
     </div>
-  </main>
-
-  <main class="tab-content stats">
-    <p class="soon">📊 Статистика в разработке...</p>
   </main>
 
   <footer>
@@ -102,7 +97,7 @@
   </div>
 
   <script>
-    // --- Modal logic ---
+    // --- Modal logic (без изменений) ---
     const cards = document.querySelectorAll(".card");
     const modal = document.getElementById("modal");
     const closeBtn = document.getElementById("close");
@@ -139,7 +134,7 @@
     // --- Tabs (ОБНОВЛЕННАЯ ЛОГИКА) ---
     const tabButtons = document.querySelectorAll(".tab-button");
     const tabs = document.querySelectorAll(".tab-content");
-    const body = document.body; // Элемент body для смены режимов
+    const body = document.body; 
 
     tabButtons.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -160,9 +155,9 @@
         } else if (btn.dataset.tab === "in-progress") {
           body.classList.add("progress-mode");
         }
-        // Вкладки News и Stats используют дефолтный фон
       });
     });
   </script>
 </body>
+</html>
 </html>
