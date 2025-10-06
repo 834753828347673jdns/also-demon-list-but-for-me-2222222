@@ -78,7 +78,7 @@
   </div>
 
   <script>
-    // --- Modal logic (без изменений) ---
+    // --- Modal logic ---
     const cards = document.querySelectorAll(".card");
     const modal = document.getElementById("modal");
     const closeBtn = document.getElementById("close");
@@ -112,10 +112,10 @@
       }
     });
 
-    // --- Tabs (ОБНОВЛЕННЫЙ КОД) ---
+    // --- Tabs (ОБНОВЛЕННАЯ ЛОГИКА) ---
     const tabButtons = document.querySelectorAll(".tab-button");
     const tabs = document.querySelectorAll(".tab-content");
-    const body = document.body; // Получаем элемент body для смены режимов
+    const body = document.body; // Элемент body для смены режимов
 
     tabButtons.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -128,8 +128,7 @@
         btn.classList.add("active");
         document.querySelector(`.${btn.dataset.tab}`).classList.add("active");
 
-        // 3. Динамическая смена фона (НОВАЯ ЛОГИКА)
-        // Сначала удаляем все режимы, чтобы вернуться к дефолтному стилю, если нужно
+        // 3. Динамическая смена фона 
         body.classList.remove("impossible-mode", "progress-mode"); 
 
         if (btn.dataset.tab === "impossible") {
