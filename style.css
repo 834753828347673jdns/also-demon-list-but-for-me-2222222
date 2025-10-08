@@ -635,39 +635,36 @@ body.progress-mode #back-to-top:hover {
 }
 
 /* === АНИМАЦИИ ГЛОУ ДЛЯ IMPOSSIBLE MODE (ОБНОВЛЕННЫЙ ЦВЕТ) === */
-
-@keyframes pulse1-imp { 
-    /* Бордовый/Кровь */
+@keyframes pulse1-imp { /* Бордовый/Кровь */
     from { box-shadow: 0 0 20px #800000; } 
     to { box-shadow: 0 0 80px #cc0000; } 
 }
-@keyframes pulse2-imp { 
-    /* Ярко-Красный */
+@keyframes pulse2-imp { /* Ярко-Красный */
     from { box-shadow: 0 0 25px #ff0000; } 
     to { box-shadow: 0 0 90px #ff3333; } 
 }
-@keyframes pulse3-imp { 
-    /* Розовый/Фигня */
+@keyframes pulse3-imp { /* Розовый/Фигня */
     from { box-shadow: 0 0 10px #ff00ff; } 
     to { box-shadow: 0 0 50px #ff66ff; } 
 }
 
-/* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST (ПЕРЕОПРЕДЕЛЕНИЕ) === */
+/* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST (ФИНАЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ) === */
 
 /* Top 1: Бордовый/Кровь */
-body.impossible-mode .top1 { 
+/* Используем ОБА класса: body.impossible-mode И .impossible.active для максимального приоритета */
+body.impossible-mode .impossible.active .top1 { 
     box-shadow: 0 0 25px #cc0000, 0 0 60px #800000, inset 0 0 30px #4d0000; 
     animation: pulse1-imp 3s infinite alternate; 
 }
 
 /* Top 2: Ярко-Красный */
-body.impossible-mode .top2 { 
+body.impossible-mode .impossible.active .top2 { 
     box-shadow: 0 0 30px #ff0000, 0 0 70px #ff3333, inset 0 0 25px #cc0000; 
     animation: pulse2-imp 3s infinite alternate; 
 }
 
 /* Top 3: Розовый/Фигня */
-body.impossible-mode .top3 { 
+body.impossible-mode .impossible.active .top3 { 
     box-shadow: 0 0 15px #ff00ff, 0 0 40px #ff66ff, inset 0 0 10px #c000ff; 
     animation: pulse3-imp 3s infinite alternate; 
 }
