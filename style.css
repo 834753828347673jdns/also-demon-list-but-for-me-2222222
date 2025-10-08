@@ -635,28 +635,31 @@ body.progress-mode #back-to-top:hover {
 }
 
 /* === АНИМАЦИИ ГЛОУ ДЛЯ IMPOSSIBLE MODE (КРАСНЫЙ) === */
-/* ... Сюда вставляете @keyframes, если они еще не добавлены ... */
 
-@keyframes pulse1-imp { /* ... */ }
-@keyframes pulse2-imp { /* ... */ }
-@keyframes pulse3-imp { /* ... */ }
+@keyframes pulse1-imp { 
+    from { box-shadow: 0 0 20px #ff3333; } 
+    to { box-shadow: 0 0 80px #ff0000; } 
+}
+/* ... и остальные pulse2-imp, pulse3-imp */
 
-/* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST === */
+/* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST (ПЕРЕОПРЕДЕЛЕНИЕ) === */
 
-/* Top 1 (Яркий Красный/Розовый) */
-body.impossible-mode .top1 { 
-    box-shadow: 0 0 25px #ff0000, 0 0 60px #ff3333, inset 0 0 30px #a00000; 
-    animation-name: pulse1-imp; /* Применяем новую анимацию */
+/* Top 1: Яркий Красный (Переопределение) */
+body.impossible-mode .top1 { 
+    /* Переопределяем статичный box-shadow, чтобы он был красным, пока анимация не начнется */
+    box-shadow: 0 0 25px #ff0000, 0 0 60px #ff3333, inset 0 0 30px #a00000; 
+    /* Переопределяем полное свойство animation, используя новую красную анимацию */
+    animation: pulse1-imp 3s infinite alternate; 
 }
 
-/* Top 2 (Средний Красный) */
-body.impossible-mode .top2 { 
-    box-shadow: 0 0 30px #cc0000, 0 0 70px #ff0000, inset 0 0 25px #800000; 
-    animation-name: pulse2-imp; /* Применяем новую анимацию */
+/* Top 2: Средний Красный (Переопределение) */
+body.impossible-mode .top2 { 
+    box-shadow: 0 0 30px #cc0000, 0 0 70px #ff0000, inset 0 0 25px #800000; 
+    animation: pulse2-imp 3s infinite alternate; 
 }
 
-/* Top 3 (Темно-Красный) */
-body.impossible-mode .top3 { 
-    box-shadow: 0 0 15px #800000, 0 0 40px #ff0000, inset 0 0 10px #600000; 
-    animation-name: pulse3-imp; /* Применяем новую анимацию */
+/* Top 3: Темно-Красный (Переопределение) */
+body.impossible-mode .top3 { 
+    box-shadow: 0 0 15px #800000, 0 0 40px #ff0000, inset 0 0 10px #600000; 
+    animation: pulse3-imp 3s infinite alternate; 
 }
