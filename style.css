@@ -625,11 +625,38 @@ body.progress-mode #copied-msg {
 
 /* PROGRESS MODE Back to Top */
 body.progress-mode #back-to-top {
-    background-color: rgba(176, 176, 176, 0.7);
-    box-shadow: 0 0 10px rgba(176, 176, 176, 0.9);
+    background-color: rgba(176, 176, 176, 0.7);
+    box-shadow: 0 0 10px rgba(176, 176, 176, 0.9);
 }
 body.progress-mode #back-to-top:hover {
-    background-color: #ffffff;
-    box-shadow: 0 0 20px #b0b0b0;
-    color: #151515;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px #b0b0b0;
+    color: #151515;
+}
+
+/* === АНИМАЦИИ ГЛОУ ДЛЯ IMPOSSIBLE MODE (КРАСНЫЙ) === */
+/* ... Сюда вставляете @keyframes, если они еще не добавлены ... */
+
+@keyframes pulse1-imp { /* ... */ }
+@keyframes pulse2-imp { /* ... */ }
+@keyframes pulse3-imp { /* ... */ }
+
+/* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST === */
+
+/* Top 1 (Яркий Красный/Розовый) */
+body.impossible-mode .top1 { 
+    box-shadow: 0 0 25px #ff0000, 0 0 60px #ff3333, inset 0 0 30px #a00000; 
+    animation-name: pulse1-imp; /* Применяем новую анимацию */
+}
+
+/* Top 2 (Средний Красный) */
+body.impossible-mode .top2 { 
+    box-shadow: 0 0 30px #cc0000, 0 0 70px #ff0000, inset 0 0 25px #800000; 
+    animation-name: pulse2-imp; /* Применяем новую анимацию */
+}
+
+/* Top 3 (Темно-Красный) */
+body.impossible-mode .top3 { 
+    box-shadow: 0 0 15px #800000, 0 0 40px #ff0000, inset 0 0 10px #600000; 
+    animation-name: pulse3-imp; /* Применяем новую анимацию */
 }
