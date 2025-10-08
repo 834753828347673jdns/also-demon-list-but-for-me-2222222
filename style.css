@@ -635,36 +635,39 @@ body.progress-mode #back-to-top:hover {
 }
 
 /* === АНИМАЦИИ ГЛОУ ДЛЯ IMPOSSIBLE MODE (ОБНОВЛЕННЫЙ ЦВЕТ) === */
-@keyframes pulse1-imp { /* Бордовый/Кровь */
-    from { box-shadow: 0 0 20px #800000; } 
-    to { box-shadow: 0 0 80px #cc0000; } 
+
+@keyframes pulse1-imp { 
+    /* #1: Ярко-Красный */
+    from { box-shadow: 0 0 20px #ff0000; } 
+    to { box-shadow: 0 0 80px #ff3333; } 
 }
-@keyframes pulse2-imp { /* Ярко-Красный */
-    from { box-shadow: 0 0 25px #ff0000; } 
-    to { box-shadow: 0 0 90px #ff3333; } 
+@keyframes pulse2-imp { 
+    /* #2: Бордовый */
+    from { box-shadow: 0 0 15px #a00000; } 
+    to { box-shadow: 0 0 60px #cc0000; } 
 }
-@keyframes pulse3-imp { /* Розовый/Фигня */
-    from { box-shadow: 0 0 10px #ff00ff; } 
-    to { box-shadow: 0 0 50px #ff66ff; } 
+@keyframes pulse3-imp { 
+    /* #3: Супер-Бордовый (Почти Невидимый) */
+    from { box-shadow: 0 0 5px #600000; } 
+    to { box-shadow: 0 0 20px #800000; } 
 }
 
 /* === КРАСНЫЕ СВЕЧЕНИЯ ДЛЯ IMPOSSIBLE LIST (ФИНАЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ) === */
 
-/* Top 1: Бордовый/Кровь */
-/* Используем ОБА класса: body.impossible-mode И .impossible.active для максимального приоритета */
+/* Top 1: Максимальный Ярко-Красный */
 body.impossible-mode .impossible.active .top1 { 
-    box-shadow: 0 0 25px #cc0000, 0 0 60px #800000, inset 0 0 30px #4d0000; 
+    box-shadow: 0 0 30px #ff0000, 0 0 70px #ff3333, inset 0 0 25px #cc0000; 
     animation: pulse1-imp 3s infinite alternate; 
 }
 
-/* Top 2: Ярко-Красный */
+/* Top 2: Бордовый */
 body.impossible-mode .impossible.active .top2 { 
-    box-shadow: 0 0 30px #ff0000, 0 0 70px #ff3333, inset 0 0 25px #cc0000; 
+    box-shadow: 0 0 20px #cc0000, 0 0 50px #a00000, inset 0 0 15px #800000; 
     animation: pulse2-imp 3s infinite alternate; 
 }
 
-/* Top 3: Розовый/Фигня */
+/* Top 3: Супер-Бордовый (Минимальное свечение) */
 body.impossible-mode .impossible.active .top3 { 
-    box-shadow: 0 0 15px #ff00ff, 0 0 40px #ff66ff, inset 0 0 10px #c000ff; 
+    box-shadow: 0 0 10px #800000, 0 0 25px #600000, inset 0 0 5px #400000; 
     animation: pulse3-imp 3s infinite alternate; 
 }
