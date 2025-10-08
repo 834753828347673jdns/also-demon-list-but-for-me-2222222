@@ -209,7 +209,8 @@ nav .tab-button:hover {
 
 /* Только Demon List и In Progress используют grid-разметку */
 .demon-list.active,
-.in-progress.active {
+.in-progress.active,
+.impossible-mode {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
